@@ -1,1 +1,65 @@
-/* You can add global styles to this file, and also import other style files */
+$header-height: 42px;
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    Segoe UI Symbol;
+}
+
+body {
+  margin: 0;
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(8px);
+  z-index: 10;
+  height: $header-height;
+  width: min(1200px, 90vw);
+  margin-inline: auto;
+  padding: 12px 24px;
+
+  > nav {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    justify-content: flex-start;
+
+    > a {
+      text-decoration: none;
+      color: #000;
+      transition: all 0.13s cubic-bezier(0.075, 0.82, 0.165, 1);
+      opacity: 0.9;
+
+      &:hover {
+        text-decoration: underline;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+main {
+  background-color: #fbfdff;
+  margin-top: $header-height;
+
+  > .screen {
+    min-height: 100svh;
+    scroll-snap-align: start;
+    display: grid;
+    place-items: center;
+    padding: clamp(16px, 4vmin, 48px);
+
+    &:nth-of-type(odd) {
+      background-color: #f7f7f7;
+    }
+  }
+}
