@@ -58,7 +58,8 @@ main {
     scroll-snap-align: start;
     display: grid;
     place-items: center;
-    padding: clamp(16px, 4vmin, 48px);
+    box-sizing: border-box;
+    padding: clamp(16px, 7vmin, 56px);
 
     &:nth-of-type(odd) {
       background-color: #f7f7f7;
