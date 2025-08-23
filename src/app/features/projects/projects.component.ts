@@ -47,7 +47,15 @@ interface Project {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectsComponent {
-  private data = signal<Project[]>([]);
+  private data = signal<Project[]>([
+    {
+      id: 'zero-to-hero',
+      title: 'Zero to HERO',
+      summary: 'Aplicación web destinada a entrenadores y llevar el seguimiento de sus atletas',
+      type: 'web',
+      image: 'assets/images/z2h-preview.png'
+    }
+  ]);
 
   filters = signal<ProjectType[]>(['all', 'web', 'libs', 'apps']);
   filter = signal<ProjectType>('all');

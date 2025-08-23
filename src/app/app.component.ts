@@ -7,7 +7,7 @@ import { ContactComponent } from './features/contact/contact.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, LandingComponent, ServicesComponent, ProjectsComponent, ContactComponent],
+  imports: [LandingComponent, ServicesComponent, ProjectsComponent, ContactComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
