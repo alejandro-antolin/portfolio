@@ -1,0 +1,9 @@
+.wrap {
+  width: min(1200px, 90vw);
+  margin-inline: auto;
+
+  .title {
+    font-size: clamp(28px, 5vmin, 48px);
+    margin-bottom: 1rem;
+  }
+}

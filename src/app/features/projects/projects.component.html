@@ -1,0 +1,40 @@
+<div class="wrap">
+    <h2 class="title">Proyectos</h2>
+
+    <div class="filters" role="tablist" aria-label="Filtro de proyectos">
+      @for (f of filters(); track f) {
+        <button
+          role="tab"
+          class="chip"
+          [attr.aria-selected]="filter() === f"
+          (click)="setFilter(f)">
+          {{ f }}
+        </button>
+      }
+    </div>
+
+    @defer (on viewport) {
+      <div class="grid" [@gridIn]>
+        @for (p of visibles(); track p.id) {
+          <article class="card" [@cardIn]>
+            <img
+              ngSrc="{{ p.image }}"
+              [attr.loading]="'lazy'"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              alt="{{ p.title }}" />
+            <div class="card-body">
+              <h3>{{ p.title }}</h3>
+              <p>{{ p.summary }}</p>
+              <span class="pill">{{ p.type }}</span>
+            </div>
+          </article>
+        }
+      </div>
+    } @placeholder {
+      <div class="grid skeleton">
+        @for (s of [1,2,3,4,5,6]; track s) {
+          <div class="card skel"></div>
+        }
+      </div>
+    }
+  </div>
