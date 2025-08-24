@@ -1,9 +1,17 @@
 <header>
   <nav>
-    <a href="#about-me">Sobre mi</a>
-    <a href="#services">Servicios</a>
-    <a href="#projects">Proyectos</a>
-    <a href="#contact">Contacto</a>
+    <a href="#about-me" [class.active]="activeSection() === 'about-me'"
+      >Sobre mi</a
+    >
+    <a href="#services" [class.active]="activeSection() === 'services'"
+      >Servicios</a
+    >
+    <a href="#projects" [class.active]="activeSection() === 'projects'"
+      >Proyectos</a
+    >
+    <a href="#contact" [class.active]="activeSection() === 'contact'"
+      >Contacto</a
+    >
   </nav>
 </header>
 
