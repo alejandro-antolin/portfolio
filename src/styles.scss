@@ -48,7 +48,7 @@ header {
 
   > nav {
     display: flex;
-    gap: 24px;
+    gap: clamp(12px, 1rem ,24px);
     align-items: center;
     justify-content: flex-end;
     width: min(1200px, 90vw);
@@ -90,6 +90,10 @@ main {
 @media (max-width: 768px) {
   :host {
     margin-top: 0;
+  }
+
+  header > nav {
+    justify-content: flex-start;
   }
 
   main > .screen {
