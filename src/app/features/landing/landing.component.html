@@ -1,10 +1,49 @@
-<div class="left-rail">
+<div class="main-content">
+  <div class="left-rail">
     <span class="role">Desarrollador web</span>
     <div class="divider"></div>
     <div class="year">{{ year }}</div>
+  </div>
+
+  <div class="hero-wrapper">
+    <!-- Card izquierda (texto) -->
+    <article class="card card--text" aria-label="Sobre mí">
+      <h1 class="title">
+        Hey, Soy <span class="accent">Alex</span>, un desarrollador web con 9
+        años de experiencia
+      </h1>
+
+      <p class="lead">
+        Disfruto creando aplicaciones web modernas que no solo funcionan bien,
+        sino que también aportan valor y mejoran la experiencia de quienes las
+        usan.
+      </p>
+
+      <div class="cta">
+        <a class="btn" href="#contact">Hablemos!</a>
+
+        <ul class="social" aria-label="Mis redes">
+          <ng-icon name="lucideGithub" class="ico" />
+          <ng-icon name="lucideLinkedin" class="ico" />
+          <ng-icon name="lucideInstagram" class="ico" />
+        </ul>
+      </div>
+    </article>
+
+    <!-- Card derecha (imagen) -->
+    <figure class="card card--image">
+      <img
+        ngSrc="/assets/images/hero-photo.jpg"
+        width="350"
+        height="600"
+        alt="Portrait"
+        priority
+      />
+    </figure>
+  </div>
 </div>
 
-
-<div class="wrap">
-    <h2 class="title">Hola!</h2>
+<div class="scroll-down">
+  <span>Scroll down</span>
+  <ng-icon name="lucideArrowDown" class="ico" />
 </div>

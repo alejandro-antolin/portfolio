@@ -1,16 +1,35 @@
-$header-height: 45px;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Outfit:wght@500;600;700&display=swap");
+
+:root {
+  --font-title: "Outfit", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --header-height: 45px;
+  --radius: 28px;
+  --gap: clamp(16px, 3vw, 32px);
+  --bg: #f7f7f7;
+  --card: #ffffff;
+  --text: #101010;
+  --muted: #5e5e5e;
+  --accent: #111;
+  --brand-mint: #e8f6ef; /* verde pastel */
+  --brand-warm: #fff1d6; /* amarillo cálido */
+}
+
+* {
+  font-family: var(--font-title);
+}
 
 html {
   scroll-behavior: smooth;
 }
 
-* {
-  font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    Segoe UI Symbol;
-}
-
 body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: #111;
+  background: #fff;
+  line-height: 1.6;
+  scroll-behavior: smooth;
   margin: 0;
   scroll-snap-type: y mandatory;
   overflow-y: auto;
@@ -23,7 +42,7 @@ header {
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   z-index: 10;
-  height: $header-height;
+  height: var(--header-height);
   box-sizing: border-box;
   padding: 12px 24px;
 
@@ -31,7 +50,7 @@ header {
     display: flex;
     gap: 24px;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: flex-end;
     width: min(1200px, 90vw);
     margin-inline: auto;
 
@@ -41,9 +60,10 @@ header {
       transition: all 0.13s cubic-bezier(0.075, 0.82, 0.165, 1);
       opacity: 0.9;
 
-      &:hover {
+      &.active {
         text-decoration: underline;
         opacity: 1;
+        font-weight: 600;
       }
     }
   }
@@ -51,7 +71,7 @@ header {
 
 main {
   background-color: #fbfdff;
-  margin-top: -$header-height;
+  margin-top: calc(-1 * var(--header-height));
 
   > .screen {
     min-height: 100svh;
@@ -59,10 +79,21 @@ main {
     display: grid;
     place-items: center;
     box-sizing: border-box;
-    padding: clamp(16px, 7vmin, 56px);
+    padding: clamp(70px, 7vmin, 56px) clamp(12px, 5vmin, 32px);
 
     &:nth-of-type(odd) {
       background-color: #f7f7f7;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  :host {
+    margin-top: 0;
+  }
+
+  main > .screen {
+    place-items: start;
+    min-height: auto;
   }
 }
